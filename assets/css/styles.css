@@ -1,6 +1,6 @@
 .chef-shadow { box-shadow: 0px 4px 20px rgba(34, 110, 42, 0.08); }
-html { scroll-padding-top: 88px; }
-section[id] { scroll-margin-top: 88px; }
+html { scroll-padding-top: 60px; }
+section[id] { scroll-margin-top: 60px; }
 .glass-panel { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.8); }
 .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 .fill-icon { font-variation-settings: 'FILL' 1; }
