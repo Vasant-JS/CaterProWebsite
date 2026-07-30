@@ -2,7 +2,7 @@ services:
   - type: web
     name: caterpro-website
     runtime: static
-    buildCommand: ""
+    buildCommand: echo "Static site ready"
     staticPublishPath: .
     autoDeployTrigger: commit
     routes:
