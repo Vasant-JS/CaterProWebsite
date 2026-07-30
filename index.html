@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CaterPro | The Complete Event &amp; Catering Management App</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-on-surface": "#eff2e9",
+                        "surface-container-high": "#e6e9e1",
+                        "secondary-fixed": "#caecc3",
+                        "on-background": "#191d18",
+                        "error-container": "#ffdad6",
+                        "surface": "#f7fbf2",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#44410d",
+                        "primary-fixed": "#a6f5a1",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ecefe6",
+                        "secondary-fixed-dim": "#afcfa8",
+                        "error": "#ba1a1a",
+                        "primary": "#206c29",
+                        "tertiary": "#64602a",
+                        "surface-container-highest": "#e0e4db",
+                        "tertiary-fixed": "#ece5a1",
+                        "secondary": "#496646",
+                        "surface-variant": "#e0e4db",
+                        "surface-tint": "#216c29",
+                        "on-tertiary-fixed-variant": "#4c4814",
+                        "on-primary-fixed-variant": "#005314",
+                        "secondary-container": "#caecc3",
+                        "on-secondary-fixed": "#062108",
+                        "on-primary-fixed": "#002204",
+                        "primary-fixed-dim": "#8bd987",
+                        "outline": "#707a6d",
+                        "on-primary-container": "#000701",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2d322c",
+                        "tertiary-fixed-dim": "#cfc987",
+                        "on-secondary-fixed-variant": "#314d2f",
+                        "outline-variant": "#c0c9ba",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191d18",
+                        "surface-container-low": "#f2f5ec",
+                        "surface-bright": "#f7fbf2",
+                        "primary-container": "#3c863f",
+                        "background": "#f7fbf2",
+                        "inverse-primary": "#8bd987",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#40493e",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1f1c00",
+                        "on-secondary-container": "#4e6c4b",
+                        "tertiary-container": "#b3ad6e",
+                        "surface-dim": "#d8dbd3"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xs": "8px",
+                        "base": "4px",
+                        "md": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "40px",
+                        "margin-desktop": "48px",
+                        "xl": "64px",
+                        "gutter": "24px",
+                        "sm": "16px"
+                    },
+                    fontFamily: {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "title-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="assets/css/styles.css?v=20260730-primary" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<a class="font-display-lg text-title-lg font-bold text-primary" href="#">CaterPro</a>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center space-x-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#features">Features</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#why-us">Why CaterPro</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#pricing">Pricing</a>
+</div>
+<!-- CTA Actions -->
+<div class="flex items-center gap-sm">
+<button class="hidden sm:block font-label-md text-label-md text-primary border border-primary px-md py-xs rounded-xl hover:bg-primary-fixed transition-all duration-200">Book a Demo</button>
+<button class="font-label-md text-label-md bg-primary text-white px-md py-xs rounded-xl hover:bg-primary-container transition-all duration-200 shadow-sm active:scale-95">Get Started</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-32 pb-xl px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-lg relative z-10">
+<div class="inline-flex items-center gap-xs px-sm py-xs bg-secondary-fixed text-on-secondary-fixed rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                    Trusted by 500+ Top Catering Brands
+                </div>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-background">
+                    The Complete <span class="text-primary">Event &amp; Catering</span> Management App
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Run your catering business with confidence. Plan events, manage menus, track inventory, create invoices, and collect payments—all from one powerful mobile application.
+                </p>
+<div class="flex flex-col sm:flex-row gap-sm pt-md">
+<button class="px-xl py-md bg-primary text-white rounded-xl font-title-lg text-title-lg hover:shadow-lg transition-all active:scale-95 flex items-center justify-center gap-xs">
+                        Get Started Free
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="px-xl py-md border-2 border-primary text-primary rounded-xl font-title-lg text-title-lg hover:bg-primary-fixed transition-all active:scale-95 flex items-center justify-center">
+                        Book a Demo
+                    </button>
+</div>
+</div>
+<div class="relative lg:h-[600px] flex items-center justify-center">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden chef-shadow border border-outline-variant/30">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+<img alt="High-quality, professional photography of a luxury Indian wedding catering setup featuring traditional copper chafing dishes and vibrant floral decorations." class="w-full h-full object-cover" src="assets/images/caterpro-image-1.jpg"/>
+<div class="absolute bottom-6 left-6 right-6 p-md glass-panel rounded-xl chef-shadow border border-white/50 animate-bounce-slow">
+<div class="flex items-center justify-between mb-sm">
+<span class="font-label-md text-label-md text-primary font-bold">Upcoming Event</span>
+<span class="px-xs py-1 bg-primary/10 text-primary text-[10px] font-bold rounded">CONFIRMED</span>
+</div>
+<div class="flex gap-md items-center">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary fill-icon">restaurant_menu</span>
+</div>
+<div>
+<p class="font-title-lg text-title-lg text-on-surface">Grand Wedding Reception</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">450 Guests • Dec 12, 2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Prop Section -->
+<section class="py-xl bg-surface-container-low px-margin-mobile md:px-margin-desktop transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-7xl mx-auto text-center space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-primary">Built for Modern Caterers</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                CaterPro replaces the chaos of spreadsheets, WhatsApp messages, and lost paperwork with a unified high-performance platform designed by culinary operations experts.
+            </p>
+<div class="grid md:grid-cols-3 gap-lg pt-xl">
+<div class="p-lg bg-surface rounded-xl border border-outline-variant/30 feature-card-hover space-y-sm text-left">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary">speed</span>
+</div>
+<h3 class="font-title-lg text-title-lg">Eliminate Paperwork</h3>
+<p class="text-on-surface-variant">Digitize every menu, invoice, and inventory list. Access it all instantly from your smartphone.</p>
+</div>
+<div class="p-lg bg-surface rounded-xl border border-outline-variant/30 feature-card-hover space-y-sm text-left">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+</div>
+<h3 class="font-title-lg text-title-lg">Reduce Waste</h3>
+<p class="text-on-surface-variant">Our smart quantity estimators ensure you buy exactly what you need for every guest count.</p>
+</div>
+<div class="p-lg bg-surface rounded-xl border border-outline-variant/30 feature-card-hover space-y-sm text-left">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<h3 class="font-title-lg text-title-lg">Scale Faster</h3>
+<p class="text-on-surface-variant">Professional workflows allow you to manage 10x more events with the same team size.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- App Experience Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface overflow-hidden transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-xl items-center">
+<div class="order-2 lg:order-1 relative h-[600px] md:h-[700px] flex items-center justify-center">
+<!-- Background Blobs -->
+<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-tertiary-fixed/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s"></div>
+<!-- Floating Smartphones -->
+<div class="relative w-full h-full flex items-center justify-center">
+<div class="absolute left-0 md:left-10 top-20 z-20 animate-float">
+<div class="relative group">
+<img alt="Smart Dashboard" class="w-48 md:w-64 rounded-3xl shadow-2xl border-4 border-white/20 transition-transform duration-500 group-hover:scale-105" src="assets/images/caterpro-image-2.jpg"/>
+<!-- Callout -->
+<div class="absolute -right-8 top-1/4 glass-panel px-sm py-2 rounded-lg border border-white/50 shadow-lg hidden md:block">
+<span class="text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-icon">dashboard</span> Smart Dashboard
+                                    </span>
+</div>
+</div>
+</div>
+<div class="absolute right-0 md:right-10 bottom-20 z-10 animate-float-delayed">
+<div class="relative group">
+<img alt="Real-time Planning" class="w-48 md:w-64 rounded-3xl shadow-2xl border-4 border-white/20 transition-transform duration-500 group-hover:scale-105" src="assets/images/caterpro-image-3.jpg"/>
+<!-- Callout -->
+<div class="absolute -left-12 bottom-1/4 glass-panel px-sm py-2 rounded-lg border border-white/50 shadow-lg hidden md:block">
+<span class="text-xs font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-icon">task_alt</span> Real-time Planning
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-lg">
+<div class="inline-flex items-center gap-xs px-sm py-xs bg-primary/10 text-primary rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">smartphone</span>
+                        Native Mobile Experience
+                    </div>
+<h2 class="font-display-lg text-display-lg text-on-background">
+                        Powering Your Passion, <span class="text-primary">On the Go</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Catering doesn't happen behind a desk. Our high-performance native iOS and Android apps bring the full power of CaterPro to your pocket. Manage the floor, the kitchen, and your clients from anywhere.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<div class="p-md glass-panel rounded-xl border border-outline-variant/30 feature-card-hover">
+<span class="material-symbols-outlined text-primary mb-xs">cloud_sync</span>
+<h4 class="font-bold mb-xs">Instant Sync</h4>
+<p class="text-sm text-on-surface-variant">Updates made by your team in the kitchen reflect on your phone in milliseconds.</p>
+</div>
+<div class="p-md glass-panel rounded-xl border border-outline-variant/30 feature-card-hover">
+<span class="material-symbols-outlined text-primary mb-xs">wifi_off</span>
+<h4 class="font-bold mb-xs">Offline Support</h4>
+<p class="text-sm text-on-surface-variant">Keep working even in venues with poor reception. Data syncs when you're back online.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid (Bento Layout) -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop max-w-[88rem] mx-auto transition-all duration-1000 opacity-100 translate-y-0" id="features">
+<div class="mb-xl text-center space-y-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Comprehensive Feature Suite</h2>
+<p class="text-on-surface-variant font-body-md">Everything you need to run a 5-star catering operation on mobile and web.</p>
+</div>
+<div class="features-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="feature-tile p-lg bg-white border border-outline-variant/40 rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary text-3xl mb-md">calendar_month</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Event Management</h4>
+<p class="text-on-surface-variant text-sm">Plan events, track status, assign tasks, and keep every booking organized from inquiry to completion.</p>
+</div>
+<div class="feature-tile p-lg bg-primary text-white rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary-fixed text-3xl mb-md">restaurant_menu</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Menu Planning</h4>
+<p class="text-primary-fixed/80 text-sm">Build reusable menus, customize dishes, and prepare event-specific food plans with confidence.</p>
+</div>
+<div class="feature-tile p-lg bg-white border border-outline-variant/40 rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary text-3xl mb-md">groups</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Customer Management</h4>
+<p class="text-on-surface-variant text-sm">Store customer profiles, contact details, preferences, and complete booking history in one place.</p>
+</div>
+<div class="feature-tile p-lg bg-primary text-white rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary-fixed text-3xl mb-md">shopping_cart</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Raw Materials Management</h4>
+<p class="text-primary-fixed/80 text-sm">Estimate ingredients, monitor stock needs, and simplify purchase planning for each guest count.</p>
+</div>
+<div class="feature-tile p-lg bg-white border border-outline-variant/40 rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary text-3xl mb-md">flatware</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Vessels &amp; Equipment Management</h4>
+<p class="text-on-surface-variant text-sm">Track vessels, serving items, kitchen tools, and event equipment before and after every function.</p>
+</div>
+<div class="feature-tile p-lg bg-primary text-white rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary-fixed text-3xl mb-md">request_quote</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Quotation Management</h4>
+<p class="text-primary-fixed/80 text-sm">Create professional quotations quickly and keep revisions, approvals, and follow-ups easy to manage.</p>
+</div>
+<div class="feature-tile p-lg bg-white border border-outline-variant/40 rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary text-3xl mb-md">receipt_long</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Invoice Management</h4>
+<p class="text-on-surface-variant text-sm">Generate polished invoices, manage billing details, and keep financial paperwork ready for clients.</p>
+</div>
+<div class="feature-tile p-lg bg-primary text-white rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary-fixed text-3xl mb-md">payments</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Payment Tracking</h4>
+<p class="text-primary-fixed/80 text-sm">Track paid, pending, and partial payments so outstanding balances are never missed.</p>
+</div>
+<div class="feature-tile p-lg bg-white border border-outline-variant/40 rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary text-3xl mb-md">summarize</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Reports</h4>
+<p class="text-on-surface-variant text-sm">Review event, sales, inventory, and payment reports for clear operational visibility.</p>
+</div>
+<div class="feature-tile p-lg bg-primary text-white rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary-fixed text-3xl mb-md">analytics</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Analytics</h4>
+<p class="text-primary-fixed/80 text-sm">Understand revenue, event volume, customer trends, and business performance with actionable insights.</p>
+</div>
+<div class="feature-tile p-lg bg-white border border-outline-variant/40 rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary text-3xl mb-md">badge</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Employee Management</h4>
+<p class="text-on-surface-variant text-sm">Manage staff details, roles, responsibilities, and event team assignments without confusion.</p>
+</div>
+<div class="feature-tile p-lg bg-primary text-white rounded-xl feature-card-hover">
+<span class="material-symbols-outlined text-primary-fixed text-3xl mb-md">database</span>
+<h4 class="font-title-lg text-title-lg mb-xs">Master Data Management</h4>
+<p class="text-primary-fixed/80 text-sm">Maintain core records for menus, materials, rates, units, and equipment from a single source.</p>
+</div>
+</div>
+</section>
+<!-- Dashboard Preview -->
+<section class="py-xl bg-surface-container px-margin-mobile md:px-margin-desktop transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-background">A Powerful Dashboard for <span class="text-primary">Decision Makers</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Stop guessing about your business health. Our dashboard gives you everything important at a single glance, allowing you to react quickly and plan effectively.
+                    </p>
+<ul class="space-y-md">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary fill-icon">check_circle</span>
+<span class="font-title-lg text-title-lg">Total Revenue Analytics</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary fill-icon">check_circle</span>
+<span class="font-title-lg text-title-lg">Real-time Upcoming Event List</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary fill-icon">check_circle</span>
+<span class="font-title-lg text-title-lg">Pending Payments Monitoring</span>
+</li>
+</ul>
+</div>
+<div class="relative rounded-xl overflow-hidden chef-shadow border border-white/40">
+<img class="w-full" data-alt="A high-fidelity software mockup showing a modern, clean catering dashboard interface." src="assets/images/caterpro-image-4.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why CaterPro & Perfect For Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto grid lg:grid-cols-2 gap-xl transition-all duration-1000 opacity-100 translate-y-0" id="why-us">
+<div class="space-y-xl">
+<h2 class="font-headline-lg text-headline-lg">Why Leading Caterers Choose Us</h2>
+<div class="grid sm:grid-cols-2 gap-lg">
+<div class="space-y-xs group">
+<h4 class="font-bold text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">alarm</span> Save Time
+                    </h4>
+<p class="text-sm text-on-surface-variant">Automated workflows reduce admin work by 15+ hours per week.</p>
+</div>
+<div class="space-y-xs group">
+<h4 class="font-bold text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">inventory_2</span> Stay Organized
+                    </h4>
+<p class="text-sm text-on-surface-variant">Centralized data means no more lost quotes or missing utensils.</p>
+</div>
+<div class="space-y-xs group">
+<h4 class="font-bold text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">mood</span> Better Experience
+                    </h4>
+<p class="text-sm text-on-surface-variant">Fast response times and professional PDFs wow your clients.</p>
+</div>
+<div class="space-y-xs group">
+<h4 class="font-bold text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">add_chart</span> Increase Revenue
+                    </h4>
+<p class="text-sm text-on-surface-variant">Catch every lead and follow up on quotes with ease.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary-container p-xl rounded-xl text-white space-y-lg relative overflow-hidden">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+<h2 class="font-headline-lg text-headline-lg relative z-10">Perfect For Your Niche</h2>
+<div class="grid grid-cols-2 gap-md relative z-10">
+<div class="bg-white/10 p-md rounded-lg flex items-center gap-sm backdrop-blur-sm hover:bg-white/20 transition-all cursor-default">
+<span class="material-symbols-outlined">favorite</span> Wedding Caterers
+                </div>
+<div class="bg-white/10 p-md rounded-lg flex items-center gap-sm backdrop-blur-sm hover:bg-white/20 transition-all cursor-default">
+<span class="material-symbols-outlined">business</span> Corporate Events
+                </div>
+<div class="bg-white/10 p-md rounded-lg flex items-center gap-sm backdrop-blur-sm hover:bg-white/20 transition-all cursor-default">
+<span class="material-symbols-outlined">factory</span> Industrial Canteens
+                </div>
+<div class="bg-white/10 p-md rounded-lg flex items-center gap-sm backdrop-blur-sm hover:bg-white/20 transition-all cursor-default">
+<span class="material-symbols-outlined">celebration</span> Private Parties
+                </div>
+<div class="bg-white/10 p-md rounded-lg flex items-center gap-sm backdrop-blur-sm hover:bg-white/20 transition-all cursor-default">
+<span class="material-symbols-outlined">restaurant</span> Restaurant Catering
+                </div>
+<div class="bg-white/10 p-md rounded-lg flex items-center gap-sm backdrop-blur-sm hover:bg-white/20 transition-all cursor-default">
+<span class="material-symbols-outlined">local_dining</span> Buffet Services
+                </div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface transition-all duration-1000 opacity-100 translate-y-0" id="pricing">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-xl space-y-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Simple, Transparent Pricing</h2>
+<p class="text-on-surface-variant font-body-lg">Choose the plan that fits your business scale.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Basic Plan -->
+<div class="p-lg bg-white border border-outline-variant/40 rounded-xl feature-card-hover flex flex-col">
+<div class="mb-md">
+<h3 class="font-headline-md text-headline-md text-on-background">Basic</h3>
+<p class="text-sm text-on-surface-variant mt-xs">Ideal for small caterers.</p>
+</div>
+<div class="mb-lg">
+<span class="text-4xl font-bold text-primary">$29</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-primary text-[20px] fill-icon">check_circle</span>
+            Event Management
+          </li>
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-primary text-[20px] fill-icon">check_circle</span>
+            Menu Planning
+          </li>
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-primary text-[20px] fill-icon">check_circle</span>
+            Customer Management
+          </li>
+</ul>
+<button class="w-full py-md border border-primary text-primary rounded-xl font-bold hover:bg-primary-fixed transition-all">Get Started</button>
+</div>
+<!-- Professional Plan -->
+<div class="p-lg bg-primary text-white rounded-xl shadow-xl flex flex-col relative scale-105 z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary-fixed text-on-secondary-fixed px-md py-1 rounded-full text-xs font-bold">MOST POPULAR</div>
+<div class="mb-md">
+<h3 class="font-headline-md text-headline-md">Professional</h3>
+<p class="text-sm text-primary-fixed/80 mt-xs">For growing businesses.</p>
+</div>
+<div class="mb-lg">
+<span class="text-4xl font-bold">$79</span>
+<span class="text-primary-fixed/80">/mo</span>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-white text-[20px] fill-icon">check_circle</span>
+            Everything in Basic
+          </li>
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-white text-[20px] fill-icon">check_circle</span>
+            Raw Materials Planning
+          </li>
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-white text-[20px] fill-icon">check_circle</span>
+            Utensils Tracking
+          </li>
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-white text-[20px] fill-icon">check_circle</span>
+            Professional Invoicing
+          </li>
+</ul>
+<button class="w-full py-md bg-white text-primary rounded-xl font-bold hover:shadow-lg transition-all">Get Started</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="p-lg bg-white border border-outline-variant/40 rounded-xl feature-card-hover flex flex-col">
+<div class="mb-md">
+<h3 class="font-headline-md text-headline-md text-on-background">Enterprise</h3>
+<p class="text-sm text-on-surface-variant mt-xs">For large-scale operations.</p>
+</div>
+<div class="mb-lg">
+<span class="text-4xl font-bold text-primary">Custom</span>
+</div>
+<ul class="space-y-sm mb-xl flex-grow">
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-primary text-[20px] fill-icon">check_circle</span>
+            Everything in Professional
+          </li>
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-primary text-[20px] fill-icon">check_circle</span>
+            Business Reports
+          </li>
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-primary text-[20px] fill-icon">check_circle</span>
+            Employee Management
+          </li>
+<li class="flex items-center gap-sm text-sm">
+<span class="material-symbols-outlined text-primary text-[20px] fill-icon">check_circle</span>
+            Multi-location support
+          </li>
+</ul>
+<button class="w-full py-md border border-primary text-primary rounded-xl font-bold hover:bg-primary-fixed transition-all">Get Started</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Reliability Section -->
+<section class="py-xl bg-surface-container-low px-margin-mobile md:px-margin-desktop text-center transition-all duration-1000 opacity-100 translate-y-0">
+<div class="max-w-3xl mx-auto space-y-lg">
+<h2 class="font-headline-lg text-headline-lg">Reliability You Can Bank On</h2>
+<div class="grid sm:grid-cols-2 gap-md text-left bg-white p-xl rounded-xl chef-shadow">
+<div class="flex items-center gap-sm font-label-md">
+<span class="material-symbols-outlined text-primary fill-icon">check_circle</span>
+                    Cloud Backup &amp; Sync
+                </div>
+<div class="flex items-center gap-sm font-label-md">
+<span class="material-symbols-outlined text-primary fill-icon">check_circle</span>
+                    256-bit Data Encryption
+                </div>
+<div class="flex items-center gap-sm font-label-md">
+<span class="material-symbols-outlined text-primary fill-icon">check_circle</span>
+                    Dedicated Support Team
+                </div>
+<div class="flex items-center gap-sm font-label-md">
+<span class="material-symbols-outlined text-primary fill-icon">check_circle</span>
+                    Offline Mode Enabled
+                </div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop text-center relative overflow-hidden bg-primary transition-all duration-1000 opacity-100 translate-y-0">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+</div>
+<div class="max-w-4xl mx-auto relative z-10 space-y-lg">
+<h2 class="font-display-lg text-display-lg text-white">Ready to Simplify Your Catering Business?</h2>
+<p class="font-headline-md text-headline-md text-primary-fixed">Manage Better. Serve Better. Grow Faster.</p>
+<div class="flex flex-col sm:flex-row gap-md justify-center pt-md">
+<button class="px-xl py-md bg-white text-primary rounded-xl font-title-lg text-title-lg hover:shadow-xl transition-all active:scale-95">
+                    Start Your Free Trial
+                </button>
+<button class="px-xl py-md border-2 border-white text-white rounded-xl font-title-lg text-title-lg hover:bg-white/10 transition-all active:scale-95">
+                    Schedule Demo
+                </button>
+</div>
+<p class="text-primary-fixed/60 text-sm">No credit card required • Cancel anytime • 14-day free trial</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-xl border-t border-outline-variant">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-xl">
+<div class="col-span-1 md:col-span-1 space-y-md">
+<a class="font-display-lg text-headline-md font-bold text-primary" href="#">CaterPro</a>
+<p class="text-on-surface-variant text-sm">Professional management solutions for the catering and hospitality industry. Engineered for growth.</p>
+</div>
+<div class="space-y-md">
+<h5 class="font-bold text-on-surface">Product</h5>
+<ul class="space-y-xs text-sm text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Features</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Pricing</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Integrations</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Mobile App</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h5 class="font-bold text-on-surface">Support</h5>
+<ul class="space-y-xs text-sm text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Contact Support</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h5 class="font-bold text-on-surface">Company</h5>
+<ul class="space-y-xs text-sm text-on-surface-variant">
+<li class=""><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li class=""><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-lg border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-on-surface-variant text-sm">© 2024 CaterPro Management Systems. All rights reserved.</p>
+<div class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">phone_in_talk</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body></html>
