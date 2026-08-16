@@ -22,6 +22,17 @@ section[id] { scroll-margin-top: 60px; }
 .features-grid .feature-tile:nth-child(even) { background: #206c29 !important; color: #ffffff !important; border-color: #206c29; }
 .features-grid .feature-tile:nth-child(even) .material-symbols-outlined { color: #a6f5a1 !important; }
 .features-grid .feature-tile:nth-child(even) p { color: rgba(166, 245, 161, 0.85) !important; }
+.niche-panel { background: linear-gradient(135deg, #206c29 0%, #3c863f 100%); }
+.niche-card { min-height: 96px; font-size: 18px; line-height: 1.35; font-weight: 600; }
+.niche-card .material-symbols-outlined { flex: 0 0 auto; font-size: 28px; }
+
+@media (max-width: 640px) {
+    .niche-panel { padding: 32px 20px !important; border-radius: 0.75rem; }
+    .niche-title { font-size: 32px !important; line-height: 40px !important; }
+    .niche-grid { gap: 12px !important; }
+    .niche-card { min-height: 76px; padding: 14px !important; gap: 10px !important; font-size: 16px; line-height: 1.3; }
+    .niche-card .material-symbols-outlined { font-size: 24px; }
+}
 
 @media (min-width: 640px) {
     .features-grid .feature-tile:nth-child(even) { background: #ffffff !important; color: #191d18 !important; border-color: rgba(192, 201, 186, 0.4); }
